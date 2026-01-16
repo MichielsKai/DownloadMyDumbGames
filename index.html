@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Need For Snake</title>
+  <title>NeedForSnake</title>
 
   <style>
     :root {
       --bg: #0f1220;
       --card: #181c36;
       --accent: #6c8cff;
+      --accent-win: #4fd1c5;
       --text: #e6e8ff;
       --muted: #aab0ff;
     }
@@ -33,7 +34,7 @@
 
     .card {
       background: var(--card);
-      max-width: 420px;
+      max-width: 440px;
       width: 100%;
       padding: 2.5rem;
       border-radius: 20px;
@@ -41,10 +42,8 @@
       text-align: center;
     }
 
-    /* Logo styling */
     .logo {
       width: 96px;
-      height: auto;
       margin: 0 auto 1.25rem;
       display: block;
       filter:
@@ -64,24 +63,36 @@
       margin-bottom: 2rem;
     }
 
+    .downloads {
+      display: grid;
+      gap: 0.75rem;
+    }
+
     .download-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, var(--accent), #8fa2ff);
-      color: #0b0d1a;
       text-decoration: none;
       font-weight: 600;
       padding: 0.9rem 1.5rem;
       border-radius: 12px;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      color: #0b0d1a;
+    }
+
+    .download-btn.macos {
+      background: linear-gradient(135deg, var(--accent), #8fa2ff);
       box-shadow: 0 8px 20px rgba(108, 140, 255, 0.4);
+    }
+
+    .download-btn.windows {
+      background: linear-gradient(135deg, var(--accent-win), #81e6d9);
+      box-shadow: 0 8px 20px rgba(79, 209, 197, 0.4);
     }
 
     .download-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(108, 140, 255, 0.6);
     }
 
     .platform {
@@ -100,20 +111,25 @@
 </head>
 <body>
   <div class="card">
-    <!-- Logo -->
     <img src="Logo.png" alt="Game logo" class="logo" />
 
-    <h1>Need For Snake</h1>
+    <h1>NeedForSnake</h1>
     <p>
-      Snake, but actually stupidly difficult.
+      Snake, but frustratingly difficult.
     </p>
 
-    <a class="download-btn" href="NeedForSnake.dmg">
-      ⬇ Download for macOS
-    </a>
+    <div class="downloads">
+      <a class="download-btn macos" href="NeedForSnake.dmg">
+        Download for macOS
+      </a>
+
+      <a class="download-btn windows" href="NeedForSnake.exe">
+        Download for Windows
+      </a>
+    </div>
 
     <div class="platform">
-      macOS only (Apple Silicon & Intel)
+      macOS (Apple Silicon & Intel) · Windows 10+
     </div>
 
     <footer>
